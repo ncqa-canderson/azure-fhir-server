@@ -48,7 +48,7 @@ namespace Microsoft.Health.Fhir.Web
 
             var smartScopes = GenerateSmartClinicalScopes();
 
-            if (developmentIdentityProviderConfiguration.Enabled)
+            if (developmentIdentityProviderConfiguration.Enabled == false)
             {
                 var host = configuration["ASPNETCORE_URLS"];
 
@@ -126,7 +126,7 @@ namespace Microsoft.Health.Fhir.Web
         public static IApplicationBuilder UseDevelopmentIdentityProviderIfConfigured(this IApplicationBuilder app)
         {
             EnsureArg.IsNotNull(app, nameof(app));
-            if (app.ApplicationServices.GetService<IOptions<DevelopmentIdentityProviderConfiguration>>()?.Value?.Enabled == true)
+            if (app.ApplicationServices.GetService<IOptions<DevelopmentIdentityProviderConfiguration>>()?.Value?.Enabled == false)
             {
                 app.UseIdentityServer();
             }

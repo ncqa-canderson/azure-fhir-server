@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Health.Fhir.Core.Features.Operations.EvaluateMeasure.Models;
 using Microsoft.Health.Fhir.Core.Features.Operations.Export.Models;
 using Microsoft.Health.Fhir.Core.Features.Operations.Reindex.Models;
 using Microsoft.Health.Fhir.Core.Features.Persistence;
@@ -90,5 +91,11 @@ namespace Microsoft.Health.Fhir.Core.Features.Operations
         /// <param name="cancellationToken">The cancellation token</param>
         /// <returns>True if any found, along with id of the job</returns>
         Task<(bool found, string id)> CheckActiveReindexJobsAsync(CancellationToken cancellationToken);
+
+        Task<Operations.EvaluateMeasure.Models.EvaluateMeasureJobOutcome> CreateEvaluateMeasureJobAsync(JobRecord jobRecord, CancellationToken cancellationToken);
+
+        Task<Operations.EvaluateMeasure.Models.EvaluateMeasureJobOutcome> GetEvaluateMeasureJobByIdAsync(string id, CancellationToken cancellationToken);
+
+        Task<Operations.EvaluateMeasure.Models.EvaluateMeasureJobOutcome> UpdateEvaluateMeasureJobAsync(JobRecord jobRecord, WeakETag eTag, CancellationToken cancellationToken);
     }
 }

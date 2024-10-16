@@ -81,7 +81,7 @@ namespace Microsoft.Health.Fhir.Api.Features.Routing
         public const string SearchParameters = "SearchParameter/";
         public const string Status = "$status";
         public const string SearchParametersStatusQuery = SearchParameters + Status;
-        public const string SearchParametersStatusQueryDefintion = OperationDefinition + "/" + OperationsConstants.SearchParameterStatus;
+        public const string SearchParametersStatusQueryDefinition = OperationDefinition + "/" + OperationsConstants.SearchParameterStatus;
         public const string SearchParametersStatusById = SearchParameters + IdRouteSegment + "/" + Status;
         public const string SearchParametersStatusPostQuery = SearchParametersStatusQuery + "/" + Search;
 
@@ -93,5 +93,10 @@ namespace Microsoft.Health.Fhir.Api.Features.Routing
         public const string BulkDeleteOperationDefinition = OperationDefinition + "/" + OperationsConstants.BulkDelete;
         public const string ResourceTypeBulkDeleteOperationDefinition = OperationDefinition + "/" + OperationsConstants.ResourceTypeBulkDelete;
         public const string BulkDeleteSoftDeletedOperationDefinition = OperationDefinition + "/" + OperationsConstants.BulkDeleteSoftDeleted;
+
+        public const string EvaluateMeasure = "$evaluate-measure";
+        public const string EvaluateMeasureResourceType = "Measure/" + EvaluateMeasure;
+        public const string EvaluateMeasureInstance = "Measure/" + IdRouteSegment + "/" + EvaluateMeasure;
+        public const string EvaluateMeasureJobLocation = OperationsConstants.Operations + "/" + OperationsConstants.EvaluateMeasure + "/" + IdRouteSegment;
     }
 }

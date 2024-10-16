@@ -80,5 +80,9 @@ namespace Microsoft.Health.Fhir.Api.Features.Routing
         internal const string BulkDeleteDefinition = nameof(BulkDeleteDefinition);
 
         internal const string BulkDeleteSoftDeletedDefinition = nameof(BulkDeleteSoftDeletedDefinition);
+
+        internal const string GetEvaluateMeasureStatusById = nameof(GetEvaluateMeasureStatusById);
+
+        internal const string CancelEvaluateMeasure = nameof(CancelEvaluateMeasure);
     }
 }

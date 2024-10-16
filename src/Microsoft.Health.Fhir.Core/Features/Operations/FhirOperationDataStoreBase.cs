@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using EnsureThat;
 using Microsoft.Extensions.Logging;
 using Microsoft.Health.Fhir.Core.Features.Conformance.Serialization;
+using Microsoft.Health.Fhir.Core.Features.Operations.EvaluateMeasure.Models;
 using Microsoft.Health.Fhir.Core.Features.Operations.Export.Models;
 using Microsoft.Health.Fhir.Core.Features.Operations.Reindex.Models;
 using Microsoft.Health.Fhir.Core.Features.Persistence;
@@ -249,5 +250,20 @@ public abstract class FhirOperationDataStoreBase : IFhirOperationDataStore
         var rowVersionAsDecimalString = BitConverter.ToInt64(rowVersionAsBytes, startIndex: 0).ToString();
 
         return WeakETag.FromVersionId(rowVersionAsDecimalString);
+    }
+
+    public Task<EvaluateMeasureJobOutcome> CreateEvaluateMeasureJobAsync(JobRecord jobRecord, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<EvaluateMeasureJobOutcome> GetEvaluateMeasureJobByIdAsync(string id, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<EvaluateMeasureJobOutcome> UpdateEvaluateMeasureJobAsync(JobRecord jobRecord, WeakETag eTag, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
     }
 }

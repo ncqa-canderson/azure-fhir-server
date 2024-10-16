@@ -141,9 +141,9 @@ namespace Microsoft.Health.Fhir.Api.Controllers
         }
 
         [HttpGet]
-        [Route(KnownRoutes.SearchParametersStatusQueryDefintion, Name = RouteNames.SearchParameterStatusOperationDefinition)]
+        [Route(KnownRoutes.SearchParametersStatusQueryDefinition, Name = RouteNames.SearchParameterStatusOperationDefinition)]
         [AllowAnonymous]
-        public async Task<IActionResult> SearchParameterStatusOperationDefintion()
+        public async Task<IActionResult> SearchParameterStatusOperationDefinition()
         {
             return await GetOperationDefinitionAsync(OperationsConstants.SearchParameterStatus);
         }
